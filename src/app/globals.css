@@ -1,0 +1,20 @@
+@import "../design-system/tokens/tokens.css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body { @apply bg-bg text-fg font-sans antialiased; }
+  ::selection { background: var(--color-brand); color: var(--slate-900); }
+  :focus-visible { outline: 2px solid var(--color-brand); outline-offset: 3px; border-radius: 6px; }
+}
+@layer utilities {
+  .code-tag { @apply font-mono text-sm font-bold text-brand; }
+  .spotlight { background: radial-gradient(360px circle at var(--mx,50%) var(--my,50%), rgba(52,199,89,.14), transparent 60%); }
+}
+@keyframes blink { 50% { opacity: 0; } }
+@keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+.caret { animation: blink 1s steps(1) infinite; }
+.rise { animation: rise .7s var(--ease-out) both; }
+@media (prefers-reduced-motion: reduce) { * { animation: none !important; scroll-behavior: auto !important; } }

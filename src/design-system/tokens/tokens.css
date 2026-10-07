@@ -1,0 +1,42 @@
+/* Design tokens — measured from portfolio.pdf (slate background, signal-green accent). */
+:root {
+  /* color / primitives */
+  --slate-900: #1f2125;
+  --slate-800: #2a2d32;
+  --slate-700: #34373c;
+  --slate-600: #44484f;
+  --slate-300: #b8bcc4;
+  --slate-100: #e7e9ec;
+  --green-500: #34c759;
+  --green-400: #5be07b;
+  --green-900: #12301c;
+  --cyan-400: #2bb5d8;
+  --red-400: #ff6b6b;
+
+  /* color / semantic */
+  --color-bg: var(--slate-700);
+  --color-bg-raised: var(--slate-800);
+  --color-bg-sunken: var(--slate-900);
+  --color-fg: var(--slate-100);
+  --color-fg-muted: var(--slate-300);
+  --color-fg-subtle: #8a8f99;
+  --color-brand: var(--green-500);
+  --color-brand-strong: var(--green-400);
+  --color-brand-soft: var(--green-900);
+  --color-accent: var(--cyan-400);
+  --color-line: rgba(52, 199, 89, 0.45);
+  --color-danger: var(--red-400);
+
+  /* type */
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, monospace;
+
+  /* radius / shadow / motion */
+  --radius-pill: 999px;
+  --radius-card: 20px;
+  --shadow-card: 0 10px 30px rgba(0, 0, 0, 0.25);
+  --shadow-glow: 0 0 0 1px var(--color-line), 0 0 32px rgba(52, 199, 89, 0.18);
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --duration-fast: 150ms;
+  --duration-base: 300ms;
+}
