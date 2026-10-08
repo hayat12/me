@@ -2,6 +2,7 @@
 export const TIME_ZONE = "Europe/Berlin";
 export const SLOT_MINUTES = 30;
 export const LEAD_HOURS = 2;
+export const HORIZON_DAYS = 90;
 const START_HOUR = 10;
 const END_HOUR = 18;
 
@@ -42,7 +43,7 @@ export function isWeekday(date: string): boolean {
 export function bookableTimes(date: string, now = Date.now()): string[] {
   if (!/^\d{4}-\d{2}-\d{2}$/.test(date) || !isWeekday(date)) return [];
   const min = now + LEAD_HOURS * 3600_000;
-  const max = now + 90 * 86400_000;
+  const max = now + HORIZON_DAYS * 86400_000;
   return allSlotTimes().filter((t) => {
     const ts = berlinToUtc(date, t);
     return ts >= min && ts <= max;
